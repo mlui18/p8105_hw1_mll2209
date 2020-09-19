@@ -37,7 +37,7 @@ I can take the mean of numbers and logical but not character or factor.
 
 
 Convert each variable in my data frame into a numeric. 
-```{r, results='hide'}
+```{r, results='hide', warning=FALSE}
 as.numeric(pull(prob1_df, samp))
 as.numeric(pull(prob1_df, samp_gt_0))
 as.numeric(pull(prob1_df, char_vec))
