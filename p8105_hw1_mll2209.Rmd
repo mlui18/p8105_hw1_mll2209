@@ -69,4 +69,10 @@ Description of the penguins dataset.
 The _Penguins_ dataset consists of `r ncol(penguins)` variables and `r nrow(penguins)` observations.
 The names of the variables are `r names(penguins)`. There are `r nlevels(pull(penguins, species))` species in the dataset, which consist of `r levels(pull(penguins, species))`. There are `r nlevels(pull(penguins, island))` islands in the dataset, including `r levels(pull(penguins, island))`. The bill lengths of the penguins range from (`r range(pull(penguins, bill_length_mm), na.rm = TRUE)` mm) with a mean of `r mean(pull(penguins, bill_length_mm), na.rm = TRUE)` mm. The bill depths of the penguins range from (`r range(pull(penguins, bill_depth_mm), na.rm = TRUE)` mm), with a mean of `r mean(pull(penguins, bill_depth_mm), na.rm = TRUE)` mm. The flipper length ranges from (`r range(pull(penguins, flipper_length_mm), na.rm = TRUE)` mm), with a mean of `r mean(pull(penguins, flipper_length_mm), na.rm = TRUE)` mm. The body mass of the penguins range from (`r range(pull(penguins, body_mass_g), na.rm = TRUE)` grams), with a mean of `r mean(pull(penguins, body_mass_g), na.rm = TRUE)`grams. 
 
+Scatterplot of flipper length (mm) vs bill length (mm). 
+```{r}
+ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
+```
+
+
 
