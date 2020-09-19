@@ -57,3 +57,12 @@ as.factor(pull(prob1_df, samp_gt_0)) * pull(prob1_df, samp)
 as.numeric(as.factor(pull(prob1_df, samp_gt_0))) * pull(prob1_df, samp)
 ```
 
+## Problem 2
+
+Loading the penguins dataset. 
+```{r}
+data("penguins", package = "palmerpenguins")
+```
+
+Description of the penguins dataset.
+
