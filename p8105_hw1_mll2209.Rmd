@@ -37,18 +37,16 @@ I can take the mean of numbers and logical but not character or factor.
 
 
 Convert each variable in my data frame into a numeric. 
-```{r}
+```{r, results='hide'}
 as.numeric(pull(prob1_df, samp))
 as.numeric(pull(prob1_df, samp_gt_0))
 as.numeric(pull(prob1_df, char_vec))
 as.numeric(pull(prob1_df, factor_vec))
 ```
-For the logical vector, we get zeroes and ones when we convert to numeric, which makes 
-sense since we were able to get a mean. 
+For the logical vector, we get zeroes and ones when we convert to numeric because R interprets Trues and Falses as ones and zeroes, which makes sense since we were able to get a mean. 
 For the character vector, we were not able to convert to numeric, and this make sense since
 we couldn't get a mean. 
-For the factor vector, we got the values 1, 2, and 3 when we converted to numeric; however we 
-were not able to get a mean with a factor vector which is contradictory. 
+For the factor vector, we got the values 1, 2, and 3 when we converted to numeric because R is able to force factor vectors into numeric vectors; however we were not able to get a mean with a factor vector which is contradictory. 
 
 
 ```{r}
@@ -72,6 +70,8 @@ The names of the variables are `r names(penguins)`. There are `r nlevels(pull(pe
 Scatterplot of flipper length (mm) vs bill length (mm). 
 ```{r}
 ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
+
+ggsave("penguins_scatterplot.pdf")
 ```
 
 
